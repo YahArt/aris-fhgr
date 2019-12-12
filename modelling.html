@@ -1,42 +1,195 @@
 <!DOCTYPE html>
 <html lang="ch">
-	<head>
-		<meta charset="utf-8">
-		<title>ARIS Gruppenarbeit</title>
-		<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet"/>
-		<link href="./assets/skeleton/css/normalize.css" rel="stylesheet"/>
-		<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet"/>
-		<link rel="stylesheet" type="text/css" href="./css/main.css">
-	</head>
-	<body>
-		<header>
+
+<head>
+	<meta charset="utf-8">
+	<title>ARIS Gruppenarbeit</title>
+	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
+	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
+	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+	<header>
+		<ul>
+			<li><a href="./index.html">Prozesse</a></li>
+			<li><a href="#" class="active">Modellierung</a></li>
+			<li><a href="./data_management.html">Datenmanagement</a></li>
+			<li><a href="./system_architecture.html">Architektur & Schnittstellen</a></li>
+			<li><a href="./scalability.html">Skalierung & Erweiterbarkeit</a></li>
+			<li><a href="./external_web_service.html">Externer Web Service</a></li>
+		</ul>
+	</header>
+	<div class="container">
+		<div class="row">
+			<h1>Darstellung des zugehörigen Services und einfache Modellierung</h1>
+
+			<h2>Use-Case Diagramm</h2>
+			<img class="u-max-full-width" src="./assets/images/use_case_diagramm.png" alt="Use-Case Diagramm">
+
+			<h3>Beschreibung</h3>
+			<p>
+				Auf der von uns unterhaltenen Web-Plattform wird eine Bestellung ausgelöst. Diese beinhaltet Kundendaten
+				und Informationen zum Produkt. Unsere ERP Anwendung verwaltet die Daten und gibt sie an unsere Partner
+				weiter. Diese vertraulichen Daten werden über einen Enterprise Service Bus ausgetauscht. Dabei werden
+				jeweils nur die zur Ausführung des Auftrags benötigten Informationen weitergeleitet. Ein Produzent
+				erhält so nur die für ihn relevante Informationen, wie zum Beispiel die Stückzahl, das Material etc. Bei
+				so einer Bestellabwicklung sind verschiedenste Parteien involviert.
+				Zuerst wird der Auftrag in die Produktion geschickt, dass heisst, der Produzent bekommt die Information
+				in welcher Grösse das T-Shirts bestellt wurde und fertigt dieses an. Die Druckfirma lässt sich das
+				T-Shirt liefern und bedruckt es mit dem Logo. Danach benachrichtigt sie den Lieferanten, welcher die
+				Bestellung abgeholt und ausgeliefert.
+
+			</p>
+
+			<h3>Akteure</h3>
+			<p>
+				Wir, unser Unternehmen und Lieferanten.
+			</p>
+
+			<h3>Auslöser</h3>
+			<p>
+				Der Kunde hat erfolgreich eine Bestellung über unsere Web Plattform getätigt und erfolgreich bezahlt.
+			</p>
+
+			<h3>Beschreibung der essentiellen Schritte als Standardablauf</h3>
 			<ul>
-				<li><a href="./index.html">Prozesse</a></li>
-				<li><a href="#" class="active">Modellierung</a></li>
-				<li><a href="./data_management.html">Datenmanagement</a></li>
-				<li><a href="./system_architecture.html">Architektur & Schnittstellen</a></li>
-				<li><a href="./scalability.html">Skalierung & Erweiterbarkeit</a></li>
-				<li><a href="./external_web_service.html">Externer Web Service</a></li>
+				<li>Kunde hat ein T-Shirt bestellt</li>
+				<li>Info über Benutzer und Bestellung geht an Datenbank</li>
+				<li>System/Datenbank wertet Bestellung aus</li>
+				<li>Partner werden ausgewählt nach jeweiliger Bestellung</li>
+				<li>System kontaktiert Partner</li>
+				<li>Partner werden Bestellinformationen gesendet</li>
+				<li>Partner führt Auftrag aus</li>
 			</ul>
-		</header>
-		<div class="container">
-			<div class="row">
-				<h1>Darstellung deszugehörigen Services und einfache Modellierung</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque. Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam. Vivamus placerat vestibulum est a semper. Aliquam eget cursus orci, eget congue dui. Etiam sem lectus, vestibulum a arcu in, faucibus tincidunt lorem. Sed accumsan nulla maximus ante tincidunt, sed sagittis tellus porttitor. Aenean enim ipsum, varius mollis velit et, blandit semper orci.
-					Donec cursus porttitor augue, vel tempor dolor egestas sed. Duis aliquam ultricies dolor, nec congue nulla finibus in. Maecenas nec dapibus elit. Phasellus condimentum varius ante a hendrerit. Etiam sodales venenatis nulla, at faucibus eros tristique vitae. Praesent aliquet, risus a convallis consectetur, sem tortor blandit dolor, vitae volutpat orci orci id enim. Vestibulum venenatis imperdiet massa et egestas. Praesent malesuada mi eget lobortis pharetra. Vestibulum faucibus mattis est, a tempor nunc egestas quis.
-				</p>
-				<h2>Komponenten Diagramm</h2>
-				<img class="u-max-full-width" src="./assets/images/komponenten_diagramm.png" alt="Komponenten Diagramm">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque. Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
-				</p>
-				<h2>Use-Case Diagramm</h2>
-				<img class="u-max-full-width" src="./assets/images/use_case_diagramm.png" alt="Use-Case Diagramm">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque. Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
-				</p>
-			</div>
+
+			<h3>Beschreibung von alternativen Abfolgen</h3>
+			<ul>
+				<li>Bei einer Reklamation</li>
+				<li>Bei fehlendem Lagerbestand oder Lieferschwierigkeiten eines Partners</li>
+				<li>Bei fehlender Zahlung eines Kunden</li>
+			</ul>
+
+			<h3>Vorbedingungen und Nachbedingungen</h3>
+			<p>
+				Unsere Vorbedingung ist, dass der Kunde hat bereits ein T-Shirt bestellt und seine Kontaktinformationen
+				an unsere Datenbank weitergegeben sowie über externen Bezahldienst die Bestellung beglichen. Die
+				Nachbedingung ist, dass der Kunde die Bestellung erfolgreich und zufriedenstellend erhalten hat
+			</p>
+
+			<h3>Beschreibung der Systemgrenzen</h3>
+			<p>
+				Wir unterscheiden bei uns zwischen externen und internen Systemen. Die internen Systeme sind jene
+				Systeme, welche wir selbst handhaben.
+			</p>
+
+			<p>
+				<i>Interne Systeme</i>
+				<ul>
+					<li>WebFrontend (WebShop)</li>
+					<li>Bestelldatenbank</li>
+					<li>Produktdatenbank</li>
+					<li>Kundendatenbank</li>
+					<li>Lieferanten- und Herstellerdatenbank</li>
+				</ul>
+			</p>
+
+			<p>
+				<i>Externe Systeme</i>
+				<ul>
+					<li>Zahlungssystem</li>
+					<li>Buchhaltung</li>
+					<li>Materialherstellung</li>
+					<li>Lieferanten</li>
+				</ul>
+			</p>
+
+			<h2>Komponenten Diagramm</h2>
+			<img class="u-max-full-width" src="./assets/images/komponenten_diagramm.png" alt="Komponenten Diagramm">
+
+			<h3>Web Shop</h3>
+			<p>
+				Der WebShop ist die Kernkompetenz des Start up und wird von uns betreut. Er dient dem Kunden dazu, seine
+				Bestellung aufzugeben, dabei gibt er seine Daten in die entsprechenden Felder ein. Die zur Verfügung
+				gestellten Produkte werden dem Produktsystem entnommen. Über einen weiterführenden Link können
+				Detailinformationen zum Material angezeigt werden. Der WebShop bietet auch eine Schnittstelle zum Lager
+				und Lieferzeit des Lieferanten, so ist es für die Kundschaft möglich diese Informationen, verlässlich
+				und in Echtzeit zu erhalten. Dies dient auch dazu, die Umsetzbarkeit zu Prüfen. Die
+				Benutzerinformationen und Informationen über den Pullover werden von unserem Frontend (WebShop) an unser
+				internes Bestellsystem weitergeleitet. Das interne ERP System ist der Dreh- und Angelpunkt unserer
+				Anwendung.
+			</p>
+
+			<h3>ERP System</h3>
+			<p>
+				Das ERP System zieht aus verschiedensten Datenbanken und externen Schnittstellen Daten zusammen und
+				zeigt diese in spezifischen Ansichten an. Das ERP System fundiert zudem als eine zentrale
+				Bestellübersicht
+			</p>
+
+			<h3>Kundenverwaltungssystem</h3>
+			<p>
+				In dieser Datenbank stecken sämtliche Informationen zu einem spezifischen Kunden
+			</p>
+
+			<h3>Zahlungssystem</h3>
+			<p>
+				Der Zahlungsvorgang wird von einem Partnerunternehmen ausgeführt. Dieses meldet die erfolgreiche
+				Bezahlung an unser Zahlungssystem, welches den Auftrag zur Auslieferung freigibt. Bei offenen Rechnungen
+				wird der Auftrag zurück behalten.
+			</p>
+
+			<h3>Produktsystem</h3>
+			<p>
+				In diesem System sind Produktdaten hinterlegt, von Produkten, welche wir auf unserem WebShop den Kunden
+				zur Verfügung stellen.
+			</p>
+
+			<h3>Lieferanten -und Herstellungssystem</h3>
+			<p>
+				Darin werden die Informationen über die Firmen gespeichert mit welchen wir zusammenarbeiten.
+			</p>
+
+			<h3>Enterprise Service Bus</h3>
+			<p>
+				Die vertraulichen Daten werden über einen Enterprise Service Bus verschlüsselt übertragen. Die Partner
+				erhalten nur diejenigen Informationen, welche für sie relevant sind. Dieser separierte Aufbau macht es
+				uns möglich, schnell und agil zu reagieren, falls einer der Partner abspringen sollte.
+			</p>
+
+			<h3>Produktionspartner / Druckpartner extern</h3>
+			<p>
+				Dieser externe Partner erhält von uns alle für ihn relevante Informationen um die Produktion, bzw. den
+				Logodruck zu handhaben, dazu gehören:
+
+				<ul>
+					<li>Materialinformationen</li>
+					<li>Mengenangabe</li>
+					<li>Grösse und Logo</li>
+				</ul>
+			</p>
+
+			<h3>Lagerungspartner extern</h3>
+			<p>
+				Unser Produkt muss zwischengelagert werden, bis es von einem Lieferanten an den Kunden versendet werden
+				kann. Dazu stellt der Druckpartner eine Einlagerungsfläche zur Verfügung.
+			</p>
+
+			<h3>Lieferungspartner extern</h3>
+			<p>
+				Der Lieferant erhält von uns über den Enterprise Service Bus alle relevanten Informationen für eine
+				erfolgreiche Lieferung, dazu gehören:
+
+				<ul>
+					<li>Lieferadresse</li>
+					<li>Liefermenge + Produkt</li>
+					<li>Lieferdatum</li>
+				</ul>
+			</p>
+
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
