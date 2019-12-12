@@ -7,12 +7,30 @@
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./assets/overlay/css/overlay.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
 <body>
 	<header>
-		<ul>
+		<div class="navbar-header">
+			<div class="toggle-button" id="toggle">
+				<span class="bar top"></span>
+				<span class="bar middle"></span>
+				<span class="bar bottom"></span>
+			</div>
+		</div>
+		<nav class="overlay" id="overlay">
+			<ul>
+				<li><a href="./index.html">Prozesse</a></li>
+				<li><a href="#" class="active">Modellierung</a></li>
+				<li><a href="./data_management.html">Datenmanagement</a></li>
+				<li><a href="./system_architecture.html">Architektur & Schnittstellen</a></li>
+				<li><a href="./scalability.html">Skalierung & Erweiterbarkeit</a></li>
+				<li><a href="./external_web_service.html">Externer Web Service</a></li>
+			</ul>
+		</nav>
+		<ul id="main-navigation">
 			<li><a href="./index.html">Prozesse</a></li>
 			<li><a href="#" class="active">Modellierung</a></li>
 			<li><a href="./data_management.html">Datenmanagement</a></li>
@@ -190,6 +208,8 @@
 
 		</div>
 	</div>
+	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>
+	<script src="./assets/overlay/js/overlay.js"></script>
 </body>
 
 </html>

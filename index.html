@@ -7,12 +7,32 @@
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./assets/overlay/css/overlay.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
 <body>
 	<header>
-		<ul>
+		<div class="navbar-header">
+			<div class="toggle-button" id="toggle">
+				<span class="bar top"></span>
+				<span class="bar middle"></span>
+				<span class="bar bottom"></span>
+			</div>
+		</div>
+
+		<nav class="overlay" id="overlay">
+			<ul>
+				<li><a href="#" class="active">Prozesse</a></li>
+				<li><a href="./modelling.html">Modellierung</a></li>
+				<li><a href="./data_management.html">Datenmanagement</a></li>
+				<li><a href="./system_architecture.html">Architektur & Schnittstellen</a></li>
+				<li><a href="./scalability.html">Skalierung & Erweiterbarkeit</a></li>
+				<li><a href="./external_web_service.html">Externer Web Service</a></li>
+			</ul>
+		</nav>
+
+		<ul id="main-navigation">
 			<li><a href="#" class="active">Prozesse</a></li>
 			<li><a href="./modelling.html">Modellierung</a></li>
 			<li><a href="./data_management.html">Datenmanagement</a></li>
@@ -25,19 +45,21 @@
 		<div class="row">
 			<h1>Beschreibung unseres Use Cases</h1>
 			<p>
-				Für unseren Use Case wollen wir uns in die Rolle eines Startups mit dem Namen <b>ClothByYou</b> versetzen.
+				Für unseren Use Case wollen wir uns in die Rolle eines Startups mit dem Namen <b>ClothByYou</b>
+				versetzen.
 				<br>
 				<br>
 				ClothByYou möchte eine Web Plattform für Kunden anbieten, auf welcher sie eigene Pullover kreieren und
 				bestellen können. Der eigene Pullover kann mittels Logo und Farbe individualisiert gestaltet werden. Wir
 				wollen hierzu ein ERP System konzipieren, welche eine solche Bestellabwicklung handhaben kann.
-				Unser Use Case befasst sich also konkret mit der <b>internen Bestellabwicklung einer Online Bestellung über
-				unsere Web Plattform</b>.
+				Unser Use Case befasst sich also konkret mit der <b>internen Bestellabwicklung einer Online Bestellung
+					über
+					unsere Web Plattform</b>.
 
 			</p>
 
 			<h1>Betroffene/unterstützte betriebswirtschaftliche Prozesse</h1>
-			
+
 			<ul>
 				<li>Digitale Plattform (Website)</li>
 				<li>Lieferungssystem (Post, DHL)</li>
@@ -53,6 +75,8 @@
 			</ul>
 		</div>
 	</div>
+	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>
+	<script src="./assets/overlay/js/overlay.js"></script>
 </body>
 
 </html>

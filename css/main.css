@@ -1,5 +1,6 @@
+
 header {
-	padding: 15px 0;
+	padding: 15px;
 	/* See https://codepen.io/sdthornton/pen/wBZdXq for further reference*/
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	margin-bottom: 10px;
@@ -47,4 +48,43 @@ header ul li a:hover {
 header ul li a.active {
 	border-bottom: 2px solid #33C3F0;
 }
+/* Responsive Menu Styling including hamburger menu, inspiration from: https://www.jqueryscript.net/menu/Fullscreen-Hamburger-Menu-Plugin-jQuery-Overlay-Menu.html */
+.overlay {
+	background-image: none;
+	background-color: black;
+}
+
+.overlay li {
+	font-size: 1em;
+}
+
+.overlay ul {
+	font-family: inherit;
+}
+
+.bar {
+	background-color:black;
+}
+
+.toggle-button {
+	display: none;
+	position: relative;
+	top: -5px;
+
+}
+
+.toggle-button:hover {
+    opacity: 1;
+}
+
+@media all and (max-width: 980px) {  
+	.toggle-button {
+		display: block;
+	}
+
+	#main-navigation {
+		display: none;
+	}
+}
+
 
