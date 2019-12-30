@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ARIS Gruppenarbeit</title>
+	<title>ARIS Gruppenarbeit Gruppe: ARIS_MYGRL</title>
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
@@ -45,34 +45,96 @@
 		<div class="row">
 			<h1>Beschreibung unseres Use Cases</h1>
 			<p>
-				Für unseren Use Case wollen wir uns in die Rolle eines Startups mit dem Namen <b>ClothByYou</b>
-				versetzen.
-				<br>
-				<br>
-				ClothByYou möchte eine Web Plattform für Kunden anbieten, auf welcher sie eigene Pullover kreieren und
-				bestellen können. Der eigene Pullover kann mittels Logo und Farbe individualisiert gestaltet werden. Wir
-				wollen hierzu ein ERP System konzipieren, welche eine solche Bestellabwicklung handhaben kann.
-				Unser Use Case befasst sich also konkret mit der <b>internen Bestellabwicklung einer Online Bestellung
-					über
-					unsere Web Plattform</b>.
+				Für unseren Use Case versetzen wir uns in die Rolle des Startups ClothByYou. ClothByYou bietet eine Web
+				Plattform für Kunden, auf welcher diese Pullover bestellen können. Mittels Auswahl von vordefinierten
+				Logos und Farben, ist es für die Kunden möglich, ihren eigenen Pullover zu gestalten und anschliessend
+				zu bestellen. Für diese Web Plattform konzipieren wir ein ERP System, welches die Bestellabwicklung
+				ausführt und überwacht. Speziell für den Use Case konzentrieren wir uns dabei auf die interne
+				Bestellabwicklung einer Online Bestellung über die Web Plattform.
 
 			</p>
 
 			<h1>Betroffene/unterstützte betriebswirtschaftliche Prozesse</h1>
 
-			<ul>
-				<li>Digitale Plattform (Website)</li>
-				<li>Lieferungssystem (Post, DHL)</li>
-				<li>Produktionsstätte (Pulloverherstellung & Logodruck) → Netzwerk von Produzenten</li>
-				<li>Bestellsystem</li>
-				<li>Zahlungssystem (Paypal, TWINT, Kreditkarten, Banküberweisung etc.)</li>
-				<li>Produkteverwaltungssystem</li>
-				<li>Enterprise Service Bus</li>
-				<li>Datenbank um Informationen über Kunden / Lieferanten und Produktionsstätte zu speichern
-					(Ansprechspartner)</li>
-				<li>Marketing</li>
-				<li>Finanzbuchhaltung</li>
-			</ul>
+			<b>Digitale Web Plattform</b>
+			<br>
+			<br>
+
+			<img class="u-max-full-width" src="/assets/images/prozess_digitale_webplattform.png"
+				alt="Prozess Digitale Web Plattform">
+
+			<p>
+				Die Schnittstelle zwischen ClothByYou und den Kunden ist die Website. Diese hat das Ziel, die
+				Bestellungen zu einem Datensatz zu aggregieren und diese im nächsten Schritt dem Produzenten
+				weiterzugeben. Kunden geben auf der Website an, in welcher Farbe sie die Pullover möchten und wählen ein
+				vordefiniertes Design, welches auf den Pullover gedruckt werden soll. Weiter sind die Anzahl und der
+				Liefertermin wählbar. Sobald die Bestellung abgeschlossen ist und die Zahlung im Zahlungssystem
+				erfolgreich erfasst wurde, werden die Bestelldaten an die Produktion weitergeleitet.
+			</p>
+
+			<b>Zahlungssystem</b>
+			<br>
+			<br>
+			<img class="u-max-full-width" src="/assets/images/prozess_zahlungssystem.png" alt="Prozess Zahlungssystem">
+
+			<p>
+				Kunden haben die Wahl zwischen der Bezahlung mit Kreditkarte oder Vorauszahlung. Erfolgt der
+				Zahlungseingang, werden die Details zur Bestellung an die Produktionsstätte zur Herstellung
+				weitergeleitet. Ging keine Zahlung ein findet der Versand einer Zahlungserinnerung statt.
+			</p>
+
+			<b>Produktionsstätte (Herstellung)</b>
+			<br>
+			<br>
+			<img class="u-max-full-width" src="/assets/images/prozess_produktion.png" alt="Prozess Produktion">
+
+			<p>
+				Nachdem die Produktionsstätte die Bestelldetails erhalten hat, wird die Produktion der Bestellung in die
+				laufende Produktionsplanung aufgenommen. Nach erfolgter Einplanung, wird zum definierten
+				Produktionszeitpunkt die Freigabe erteilt und der Pullover produziert. Hat dieser die Produktion
+				durchlaufen, wird eine Endkontrolle gemäss unseren Qualitätsansprüchen durchgeführt. Wird diese
+				Kontrolle bestanden, erfolgt die Auslieferung an das Lager. Sollte die Endkontrolle nicht bestanden
+				werden, muss die Ware entweder ausgebessert oder neu produziert werden. In diesem Fall beginnt der
+				Produktionsprozess von neuem.
+			</p>
+
+			<b>Lager</b>
+			<br>
+			<br>
+			<img class="u-max-full-width" src="/assets/images/prozess_lager.png" alt="Prozess Lager">
+
+			<p>
+				Die Ware, welche von der Produktionsstätte angeliefert wird, durchläuft erneut eine Qualitätskontrolle.
+				Wird diese Kontrolle bestanden, erfolgt die Einlagerung. Sollte die Eingangskontrolle nicht bestanden
+				werden, erfolgt der Rückversand an den Lieferanten. Sobald das Lager die Details zur Auslieferung
+				erhalten hat, wird die Ware vorbereitet und an den Druck weitergegeben.
+			</p>
+
+			<b>Produktionsstätte (Druck)</b>
+			<br>
+			<br>
+			<img class="u-max-full-width" src="/assets/images/prozess_druck.png" alt="Produktionsstätte (Druck)">
+
+			<p>
+				Der Produktionsprozess im Druck entspricht weitgehend dem Prozess der Produktion in der Herstellung.
+				Ausnahme dabei bildet die Anlieferung der Ware und der anschliessende Empfang der Druckdetails. Die
+				bestellte Ware wird vom Lager mittels eines Lieferantenpartners geliefert. Die Druckdetails welche von
+				den Kunden auf unserer Webseite eingegeben wurden, werden vom System bereitgestellt. Nach einer erneuten
+				Endkontrolle, analog zum Produktionsprozess in der Herstellung, wird die Ware nach erfolgreicher Prüfung
+				an den Lieferanten zur Auslieferung weitergereicht.
+			</p>
+
+			<b>Lieferant (Auslieferung)</b>
+			<br>
+			<br>
+			<img class="u-max-full-width" src="/assets/images/prozess_lieferant.png" alt="Lieferant (Auslieferung)">
+
+			<p>
+				Der Lieferant erhält die verpackte Ware und ruft die Lieferdetails aus unserem ERP System auf. Im
+				internen Verteilzentrum wird die Ware für die Endauslieferung zum gewünschten Termin vorbereitet und
+				wenn es soweit ist ausgeliefert.
+			</p>
+
 		</div>
 	</div>
 	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>

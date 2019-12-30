@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ARIS Gruppenarbeit</title>
+	<title>ARIS Gruppenarbeit Gruppe: ARIS_MYGRL</title>
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
@@ -46,166 +46,113 @@
 			<h2>Use-Case Diagramm</h2>
 			<img class="u-max-full-width" src="./assets/images/use_case_diagramm.png" alt="Use-Case Diagramm">
 
-			<h3>Beschreibung</h3>
+			<b>Beschreibung</b>
 			<p>
-				Auf der von uns unterhaltenen Web-Plattform wird eine Bestellung ausgelöst. Diese beinhaltet Kundendaten
+				Auf der von uns unterhaltenen Web Plattform wird eine Bestellung ausgelöst. Diese beinhaltet Kundendaten
 				und Informationen zum Produkt. Unsere ERP Anwendung verwaltet die Daten und gibt sie an unsere Partner
 				weiter. Diese vertraulichen Daten werden über einen Enterprise Service Bus ausgetauscht. Dabei werden
-				jeweils nur die zur Ausführung des Auftrags benötigten Informationen weitergeleitet. Ein Produzent
-				erhält so nur die für ihn relevante Informationen, wie zum Beispiel die Stückzahl, das Material etc. Bei
-				so einer Bestellabwicklung sind verschiedenste Parteien involviert.
-				Zuerst wird der Auftrag in die Produktion geschickt, dass heisst, der Produzent bekommt die Information
-				in welcher Grösse das T-Shirts bestellt wurde und fertigt dieses an. Die Druckfirma lässt sich das
-				T-Shirt liefern und bedruckt es mit dem Logo. Danach benachrichtigt sie den Lieferanten, welcher die
-				Bestellung abgeholt und ausgeliefert.
+				jeweils nur die zur Ausführung des Auftrags benötigten Informationen an die jeweiligen Partner
+				weitergeleitet. Der Lagerist erhält zum Beispiel die Stückzahl, Farbe oder das Material und lässt die
+				Bestellung der Druckerei zukommen. Diese hat Zugriff auf das gewünschte Design und druckt dieses auf den
+				Pullover. Zum Schluss wird der Lieferant benachrichtigt, welcher die Bestellung abholt und ausliefert.
 
+				Für jedes Produkt gibt es eine minimale Lagermenge. Wird diese unterschritten, werden automatisch neue
+				Pullover beim Produzenten nachbestellt.
 			</p>
 
-			<h3>Akteure</h3>
+			<b>Akteure</b>
 			<p>
-				Wir, unser Unternehmen und Lieferanten.
+				Unser Unternehmen (Startup ClothByYou), sowie unsere Partner sind die Akteure im Use Case.
 			</p>
 
-			<h3>Auslöser</h3>
+			<b>Auslöser</b>
 			<p>
-				Der Kunde hat erfolgreich eine Bestellung über unsere Web Plattform getätigt und erfolgreich bezahlt.
+				Eine Bestellung wird über unsere Web Plattform getätigt.
 			</p>
 
-			<h3>Beschreibung der essentiellen Schritte als Standardablauf</h3>
+			<b>Vorbedingungen und Nachbedingungen</b>
+			<p>
+				Unsere Vorbedingungen bestehen darin, dass die Kundschaft sämtliche notwendigen Informationen über
+				unsere Webplattform ausgefüllt hat. Die Nachbedingung ist, dass die Bestellung erfolgreich und
+				zufriedenstellend an die Kundschaft ausgeliefert wurde.
+			</p>
+
+			<b>Beschreibung der Systemgrenzen</b>
+			<p>
+				Wir unterscheiden bei uns zwischen externen und internen Systemen. Die internen Systeme sind jene,
+				welche wir selbst betreuen, bzw. führen. Es ist jedoch wichtig, an dieser Stelle anzumerken, dass die
+				Datenbanken aus Gründen der Ressourcen Skalierung etc. bei einem externen Cloud Anbieter wie <a
+					href="https://azure.microsoft.com/en-us/product-categories/databases/" target="_blank">Microsoft
+					Azure</a> gehostet werden.
+			</p>
+
+			<b>Interne Systeme:</b>
 			<ul>
-				<li>Kunde hat ein T-Shirt bestellt</li>
-				<li>Info über Benutzer und Bestellung geht an Datenbank</li>
-				<li>System/Datenbank wertet Bestellung aus</li>
-				<li>Partner werden ausgewählt nach jeweiliger Bestellung</li>
-				<li>System kontaktiert Partner</li>
-				<li>Partner werden Bestellinformationen gesendet</li>
-				<li>Partner führt Auftrag aus</li>
+				<li>WebFrontend (Webshop)</li>
+				<li>Bestelldatenbank</li>
+				<li>Produktdatenbank</li>
+				<li>Kundendatenbank</li>
+				<li>Lieferanten- und Herstellerdatenbank</li>
 			</ul>
 
-			<h3>Beschreibung von alternativen Abfolgen</h3>
+			<b>Externe Systeme / Unsere Partner:</b>
 			<ul>
-				<li>Bei einer Reklamation</li>
-				<li>Bei fehlendem Lagerbestand oder Lieferschwierigkeiten eines Partners</li>
-				<li>Bei fehlender Zahlung eines Kunden</li>
+				<li>Zahlungssystem</li>
+				<li>Buchhaltung</li>
+				<li>Produktion und Qualitätssicherung</li>
+				<li>Lieferanten</li>
+				<li>Lager</li>
 			</ul>
 
-			<h3>Vorbedingungen und Nachbedingungen</h3>
+			<b>Beschreibung der essentiellen Schritte als Standardablauf</b>
 			<p>
-				Unsere Vorbedingung ist, dass der Kunde hat bereits ein T-Shirt bestellt und seine Kontaktinformationen
-				an unsere Datenbank weitergegeben sowie über externen Bezahldienst die Bestellung beglichen. Die
-				Nachbedingung ist, dass der Kunde die Bestellung erfolgreich und zufriedenstellend erhalten hat
+				Nach erfolgreicher Bestellung und Bezahlung von der Seite des Kunden, gelangen die Daten in unser ERP
+				System. Diese Daten werden von unserem ERP System ausgewertet und in den relevanten Datenbanken
+				abgelegt. Wir besitzen dedizierte Datenbanken je nach Typ der Daten. So landen zum Beispiel Kundendaten
+				in unserer Kundendatenbank oder Produktdaten in unserer Produktdatenbank. Nachdem alle relevanten Daten
+				kategorisiert und abgelegt wurden, senden wir unseren Partnern, via Enterprise Service Bus, die für sie
+				relevanten Informationen zu. Das Produkt wird anschliessend vollautomatisiert gefertigt und den Kunden
+				geliefert. Während dieser gesamten Prozesskette erhält unser ERP System Daten über den aktuellen Stand.
+				So können wir ein Tracking von jedem Prozessschritt, angefangen bei der Fertigung bis hin zur Lieferung
+				umsetzen.
 			</p>
 
-			<h3>Beschreibung der Systemgrenzen</h3>
+			<b>Beschreibung von alternativen Abfolgen</b>
 			<p>
-				Wir unterscheiden bei uns zwischen externen und internen Systemen. Die internen Systeme sind jene
-				Systeme, welche wir selbst handhaben.
-			</p>
-
-			<p>
-				<i>Interne Systeme</i>
+				Hier möchten wir Abfolgen beschreiben, welche nicht dem Standardablauf entsprechen. Dies sind in unserem
+				Fall folgende Abfolgen:
 				<ul>
-					<li>WebFrontend (WebShop)</li>
-					<li>Bestelldatenbank</li>
-					<li>Produktdatenbank</li>
-					<li>Kundendatenbank</li>
-					<li>Lieferanten- und Herstellerdatenbank</li>
+					<li>Bei fehlender Zahlung eines Kunden</li>
+					<li>Bei Lieferschwierigkeiten</li>
+					<li>Bei einer Reklamation</li>
 				</ul>
 			</p>
 
+			<em>Bei fehlender Zahlung eines Kunden</em>
 			<p>
-				<i>Externe Systeme</i>
-				<ul>
-					<li>Zahlungssystem</li>
-					<li>Buchhaltung</li>
-					<li>Materialherstellung</li>
-					<li>Lieferanten</li>
-				</ul>
+				Bei einer ausstehenden Zahlung wird unser externer Zahlungspartner den Kunden mahnen. Sollte die Mahnung
+				keinen Erfolg haben, wird versucht, Kontakt mit dem Kunden aufzunehmen. Nur im Falle, dass der Kunde
+				selbst nach wiederholten Mahnungen und Kontaktversuchen nicht reagiert, wird er für eine bestimmte Zeit
+				von unserer Webplattform gesperrt.
 			</p>
 
-			<h2>Komponenten Diagramm</h2>
-			<img class="u-max-full-width" src="./assets/images/komponenten_diagramm.png" alt="Komponenten Diagramm">
-
-			<h3>Web Shop</h3>
+			<em>Bei Lieferschwierigkeiten</em>
 			<p>
-				Der WebShop ist die Kernkompetenz des Start up und wird von uns betreut. Er dient dem Kunden dazu, seine
-				Bestellung aufzugeben, dabei gibt er seine Daten in die entsprechenden Felder ein. Die zur Verfügung
-				gestellten Produkte werden dem Produktsystem entnommen. Über einen weiterführenden Link können
-				Detailinformationen zum Material angezeigt werden. Der WebShop bietet auch eine Schnittstelle zum Lager
-				und Lieferzeit des Lieferanten, so ist es für die Kundschaft möglich diese Informationen, verlässlich
-				und in Echtzeit zu erhalten. Dies dient auch dazu, die Umsetzbarkeit zu Prüfen. Die
-				Benutzerinformationen und Informationen über den Pullover werden von unserem Frontend (WebShop) an unser
-				internes Bestellsystem weitergeleitet. Das interne ERP System ist der Dreh- und Angelpunkt unserer
-				Anwendung.
+				Da wir ein Netzwerk von Partnern haben, können wir bei Lieferschwierigkeiten sehr schnell auf
+				Alternativen ausweichen. Dies war uns von Anfang an wichtig, um uns auf solche Situationen vorbereitet
+				zu sein.
 			</p>
 
-			<h3>ERP System</h3>
+			<em>Bei einer Reklamation</em>
 			<p>
-				Das ERP System zieht aus verschiedensten Datenbanken und externen Schnittstellen Daten zusammen und
-				zeigt diese in spezifischen Ansichten an. Das ERP System fundiert zudem als eine zentrale
-				Bestellübersicht
+				Im Falle einer Reklamation, muss zuerst die Ursache sachlich mit dem Kunden geklärt werden. Hierzu
+				nehmen wir seine Reklamation in unserem System auf. Anschliessend wird, wenn möglich (und je nach
+				Ursache) versucht Kulanz walten zu lassen. Die Kunden sind die wichtigste Wertschöpfungsquelle unseres
+				Startups und wir wollen dies natürlich auch mit Servicequalität und Kundenbindung honorieren. Um weitere
+				Reklamationen zu vermeiden ist es auch notwendig, dass wir unsere externen Partner regelmässig einer
+				strengen Qualitätskontrolle unterziehen und so gewährleisten, dass unsere Produkte bereits auf einem
+				qualitativ hochwertigem Niveau sind.
 			</p>
-
-			<h3>Kundenverwaltungssystem</h3>
-			<p>
-				In dieser Datenbank stecken sämtliche Informationen zu einem spezifischen Kunden
-			</p>
-
-			<h3>Zahlungssystem</h3>
-			<p>
-				Der Zahlungsvorgang wird von einem Partnerunternehmen ausgeführt. Dieses meldet die erfolgreiche
-				Bezahlung an unser Zahlungssystem, welches den Auftrag zur Auslieferung freigibt. Bei offenen Rechnungen
-				wird der Auftrag zurück behalten.
-			</p>
-
-			<h3>Produktsystem</h3>
-			<p>
-				In diesem System sind Produktdaten hinterlegt, von Produkten, welche wir auf unserem WebShop den Kunden
-				zur Verfügung stellen.
-			</p>
-
-			<h3>Lieferanten -und Herstellungssystem</h3>
-			<p>
-				Darin werden die Informationen über die Firmen gespeichert mit welchen wir zusammenarbeiten.
-			</p>
-
-			<h3>Enterprise Service Bus</h3>
-			<p>
-				Die vertraulichen Daten werden über einen Enterprise Service Bus verschlüsselt übertragen. Die Partner
-				erhalten nur diejenigen Informationen, welche für sie relevant sind. Dieser separierte Aufbau macht es
-				uns möglich, schnell und agil zu reagieren, falls einer der Partner abspringen sollte.
-			</p>
-
-			<h3>Produktionspartner / Druckpartner extern</h3>
-			<p>
-				Dieser externe Partner erhält von uns alle für ihn relevante Informationen um die Produktion, bzw. den
-				Logodruck zu handhaben, dazu gehören:
-
-				<ul>
-					<li>Materialinformationen</li>
-					<li>Mengenangabe</li>
-					<li>Grösse und Logo</li>
-				</ul>
-			</p>
-
-			<h3>Lagerungspartner extern</h3>
-			<p>
-				Unser Produkt muss zwischengelagert werden, bis es von einem Lieferanten an den Kunden versendet werden
-				kann. Dazu stellt der Druckpartner eine Einlagerungsfläche zur Verfügung.
-			</p>
-
-			<h3>Lieferungspartner extern</h3>
-			<p>
-				Der Lieferant erhält von uns über den Enterprise Service Bus alle relevanten Informationen für eine
-				erfolgreiche Lieferung, dazu gehören:
-
-				<ul>
-					<li>Lieferadresse</li>
-					<li>Liefermenge + Produkt</li>
-					<li>Lieferdatum</li>
-				</ul>
-			</p>
-
 		</div>
 	</div>
 	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>

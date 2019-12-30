@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ARIS Gruppenarbeit</title>
+	<title>ARIS Gruppenarbeit Gruppe: ARIS_MYGRL</title>
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
@@ -42,38 +42,150 @@
 	<div class="container">
 		<div class="row">
 			<h1>Systemarchitektur und Schnittstellentechnologie</h1>
+
+			<h2>Komponenten Diagramm</h2>
+
+			<img class="u-max-full-width" src="/assets/images/komponenten_diagramm.png" alt="Komponenten Diagramm">
+
+			<br>
+			<br>
+			<b>Webshop</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
-				Vivamus placerat vestibulum est a semper. Aliquam eget cursus orci, eget congue dui. Etiam sem lectus,
-				vestibulum a arcu in, faucibus tincidunt lorem. Sed accumsan nulla maximus ante tincidunt, sed sagittis
-				tellus porttitor. Aenean enim ipsum, varius mollis velit et, blandit semper orci.
-				Donec cursus porttitor augue, vel tempor dolor egestas sed. Duis aliquam ultricies dolor, nec congue
-				nulla finibus in. Maecenas nec dapibus elit. Phasellus condimentum varius ante a hendrerit. Etiam
-				sodales venenatis nulla, at faucibus eros tristique vitae. Praesent aliquet, risus a convallis
-				consectetur, sem tortor blandit dolor, vitae volutpat orci orci id enim. Vestibulum venenatis imperdiet
-				massa et egestas. Praesent malesuada mi eget lobortis pharetra. Vestibulum faucibus mattis est, a tempor
-				nunc egestas quis.
+				Der Webshop ist die Kernkompetenz des Startups und wird von uns direkt betreut. Er dient dem Kunden
+				dazu, seine Bestellung aufzugeben, dabei gibt er seine Daten in die entsprechenden Felder ein. Die zur
+				Verfügung gestellten Produkte werden dem Produktsystem entnommen. Über einen weiterführenden Link können
+				Detailinformationen zum Material angezeigt werden. Der Webshop bietet auch eine Schnittstelle zum Lager
+				und Lieferzeit des Lieferanten, so ist es für die Kundschaft möglich diese Informationen, verlässlich
+				und in Echtzeit zu erhalten. Dies dient auch dazu, die Umsetzbarkeit zu Prüfen. Die
+				Benutzerinformationen und Informationen über den Pullover werden von unserem Frontend (Webshop) an unser
+				internes Bestellsystem weitergeleitet. Das interne ERP System ist der Dreh- und Angelpunkt unserer
+				Anwendung.
 			</p>
-			<h2>Welche Schnittstellentechnologie wird bevorzugt / verwendet?</h2>
+
+			<b>ERP System</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
+				Das ERP System zieht aus verschiedensten Datenbanken und externen Schnittstellen Daten zusammen und
+				zeigt diese in spezifischen Ansichten an. Das ERP System fungiert zudem als eine zentrale
+				Bestellübersicht.
 			</p>
-			<h2>Welche Funktionen müssen auf den Oberflächen bereitgestellt werden?</h2>
+
+			<b>Kundenverwaltungssystem</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
+				In dieser Datenbank stecken sämtliche Informationen zu einem spezifischen Kunden.
 			</p>
+
+			<b>Zahlungssystem</b>
+			<p>
+				Der Zahlungsvorgang wird von einem Partnerunternehmen ausgeführt. Dieses meldet die erfolgreiche
+				Bezahlung an unser Zahlungssystem, welches den Auftrag zur Auslieferung freigibt. Bei offener Zahlung
+				wird der Auftrag zurück behalten.
+			</p>
+
+			<b>Produktsystem</b>
+			<p>
+				In diesem System sind Produktdaten hinterlegt, von Produkten, welche wir auf unserem Webshop den Kunden
+				zur Verfügung stellen.
+			</p>
+
+			<b>Lieferanten & Herstellungssystem</b>
+			<p>
+				Darin werden die Informationen über die Firmen gespeichert mit welchen wir zusammenarbeiten.
+			</p>
+
+			<b>Enterprise Service Bus</b>
+			<p>
+				Die vertraulichen Daten werden über einen Enterprise Service Bus verschlüsselt übertragen. Die Partner
+				erhalten nur diejenigen Informationen, welche für sie relevant sind. Dieser separierte Aufbau macht es
+				uns möglich, schnell und agil zu reagieren, falls einer der Partner abspringen sollte.
+			</p>
+
+			<b>Produktionspartner / Druckpartner extern</b>
+			<p>
+				Dieser externe Partner erhält von uns alle für ihn relevante Informationen um die Produktion, bzw. den
+				Logodruck zu handhaben, dazu gehören:
+				<ul>
+					<li>Materialinformationen</li>
+					<li>Mengenangabe</li>
+					<li>Grösse und Logo</li>
+				</ul>
+			</p>
+
+			<b>Lagerungspartner extern</b>
+			<p>
+				Die bestellten Pullover werden reserviert und bei uns an Lager behalten bis sie in den Druck gehen um
+				eine fristgerechte Lieferung zu garantieren.
+			</p>
+
+			<b>Lieferungspartner extern</b>
+			<p>
+				Der Lieferant erhält von uns über den Enterprise Service Bus alle relevanten Informationen für eine
+				erfolgreiche Lieferung, dazu gehören:
+				<ul>
+					<li>Lieferadresse</li>
+					<li>Liefermenge</li>
+					<li>Lieferdatum</li>
+				</ul>
+			</p>
+
+			<b>Bevorzugte Schnittstellentechnologie</b>
+			<p>
+				Um mit unseren externen Partnern (Produzenten, Lieferanten etc.) zu kommunizieren, verwenden wir einen
+				Enterprise Service Bus. Wir beziehen den Enterprise Service Bus über die Cloud. Ein bekannter Anbieter
+				hierfür ist der <a href="https://www.g2.com/products/azure-service-bus/features" target="_blank">Azure
+					Service Bus</a>, welcher von Microsoft angeboten wird.
+			</p>
+
+			<p>
+				Wir haben uns aus folgenden Gründen für einen Enterprise Service Bus entschieden:
+				<ul>
+					<li>Leichter Austausch von Komponenten (unsere externen Partner)</li>
+					<li>Da die Kommunikation mit den externen Partnern über einen Bus verläuft, können wir leichter
+						datenschutztechnische Massnahmen implementieren. Diese Massnahmen müssen nur an einer zentralen
+						Stelle implementiert werden</li>
+					<li>Ein Enterprise Service Bus macht auch Dinge wie Ressourcen Skalierung (Load Balancing), sowie
+						Fehlerbehandlung (im Falle, dass einer unserer externer Services ausfällt)</li>
+					<li>Ein Enterprise Service Bus kann mit Hilfe von Middlewares um beliebige Funktionalitäten
+						erweitert werden</li>
+				</ul>
+			</p>
+
+			<p>
+				Jedoch gibt es auch einige Nachteile welche wir beachten müssen:
+				<ul>
+					<li>Wir haben einen Single Point of Failure, wenn unser Enterprise Service Bus aussteigt, haben wir
+						diverse Probleme. Auf dieses Szenario müssen wir uns gut vorbereiten</li>
+					<li>Da wir zusätzlich eine Schnittstelle zwischen uns und den externen Partnern haben, kann dies
+						unter Umständen zu Performance Problemen führen. Hier ist es wichtig, nur die notwendigsten
+						Daten zu verschicken, um die Bandbreite nicht unnötig zu strapazieren</li>
+				</ul>
+
+				Da wir jedoch diesen Service Bus über einen Cloud Anbieter beziehen, muss sich unser Cloud Anbieter um
+				Ausfallsicherheit und Skalierung kümmern. Natürlich ist dies mit Mehrkosten verbunden.
+			</p>
+
+			<p>
+				Grundsätzlich gelangen all unsere Daten in den Enterprise Service Bus. Dort werden sie von der Message
+				Oriented Middleware entgegengenommen und anschliessend über eine definierte API (Application Programming
+				Interfaces) unseren externen Partnern zur Verfügung gestellt. Natürlich müssen auch unsere Partner in
+				der Lage sein, mit unseren Services zu kommunizieren. Hier kommt ein API Gateway ins Spiel. Dieser sorgt
+				dafür, dass wir nur die relevanten APIs öffentlich machen. Ein Lieferant braucht so zum Beispiel nicht
+				die gleichen API befehle wie ein Produzent etc. Über den API Gateway können wir bestimmen, wer was
+				sieht. Natürlich ist auch die Sicherheit der Daten von zentraler Bedeutung. Wie bereits erwähnt, kann
+				der Enterprise Service Bus um sogenannte Middlewares ergänzt werden. Einer dieser Middleware ist bei uns
+				für die Sicherheit der Daten zuständig. Grundsätzlich kann gesagt werden, dass wir mit unseren externen
+				Partnern nur über definierte API kommunizieren. Bevor jedoch ein solcher Request abgesetzt wird, ist
+				immer zuerst die Sicherheit zu prüfen, dies übernimmt unser Security Modul.
+
+				Als Datenformat verwenden wir XML, da dies eine weit verbreitete Sprache ist, um Daten semantisch zu
+				modellieren.
+
+				Die externen APIs werden anschliessend via HTTP (GET / PUT / DELETE) Requests angesprochen. Wir erwarten
+				von jedem unserer externen Partnern, dass eine solche API zur Verfügung steht, ein Beispiel wäre hier
+				der <a href="https://developer.paypal.com/docs/api/overview/" target="_bank">Paypal (Zahlungsdienst)</a>
+			</p>
+
+			<img class="u-max-full-width" src="/assets/images/enterprise_service_bus.png" alt="Enterprise Service Bus">
+
 		</div>
 	</div>
 	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>

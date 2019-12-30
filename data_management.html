@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ARIS Gruppenarbeit</title>
+	<title>ARIS Gruppenarbeit Gruppe: ARIS_MYGRL</title>
 	<link href="./assets/font_awesome/css/all.min.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/normalize.css" rel="stylesheet" />
 	<link href="./assets/skeleton/css/skeleton.css" rel="stylesheet" />
@@ -42,39 +42,95 @@
 	</header>
 	<div class="container">
 		<div class="row">
-			<h1>Datenhaltung & Datenmanagement</h1>
+			<h1>Datenhaltung & Datenmanagement / Mockups</h1>
+
+			<b>Allgemeine Datenübertragung</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
-				Vivamus placerat vestibulum est a semper. Aliquam eget cursus orci, eget congue dui. Etiam sem lectus,
-				vestibulum a arcu in, faucibus tincidunt lorem. Sed accumsan nulla maximus ante tincidunt, sed sagittis
-				tellus porttitor. Aenean enim ipsum, varius mollis velit et, blandit semper orci.
-				Donec cursus porttitor augue, vel tempor dolor egestas sed. Duis aliquam ultricies dolor, nec congue
-				nulla finibus in. Maecenas nec dapibus elit. Phasellus condimentum varius ante a hendrerit. Etiam
-				sodales venenatis nulla, at faucibus eros tristique vitae. Praesent aliquet, risus a convallis
-				consectetur, sem tortor blandit dolor, vitae volutpat orci orci id enim. Vestibulum venenatis imperdiet
-				massa et egestas. Praesent malesuada mi eget lobortis pharetra. Vestibulum faucibus mattis est, a tempor
-				nunc egestas quis.
+				Die Daten in den vorliegenden Mockups kommen aus Datenbanksystemen. Um an diese Daten zu gelangen, wird
+				eine REST-Schnittstelle, bzw. ein REST Web Service verwendet. Die REST-Schnittstelle erlaubt es einen
+				HTTP Request mit einer spezifischen URL Codierung an den REST Web Service zu schicken. Dieser nimmt dann
+				den Request entgegen und weiss an Hand der Codierung in der URL, welche Daten er bei der Datenbank
+				abfragen muss. Die angeforderten Daten gibt er anschliessend via HTTP Request an den Aufrufer zurück.
 			</p>
-			<h2>Definition der Masken</h2>
+
+			<img class="u-max-full-width" src="./assets/images/allgemeine_datenuebertragung.png"
+				alt="Allgemeine Datenübertragung">
+
+			<br>
+			<br>
+			<b>Mockup - Dashboard</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
+				Folgend wird unser internes ERP-System aus der Sicht einer Administratorin abgebildet.
+				Auf der ersten Abbildung wird das Dashboard dargestellt, dies ist die Startansicht beim öffnen des
+				ERP-Systems. Die Darstellung entspricht der Ansicht mit allen Zugriffsberechtigungen. Auf der linken
+				Seite werden Benutzerinformationen dargestellt. Alle Benutzenden verfügen über individuell bestimmte
+				Zugriffsberechtigungen, welche definieren was angezeigt wird und was nicht.
+
+				Die Kernbereiche des ERP-Systems sind:
+
+				<ul>
+					<li>Produkte</li>
+					<li>Kunde</li>
+					<li>Lieferanten</li>
+					<li>Bestellungen</li>
+				</ul>
+
+				Um innerhalb des Systems jederzeit auf die einzelnen Bereich zu gelangen, haben die Nutzenden die
+				Möglichkeit über die Seitenleiste zu einer bestimmten Kategorie zu navigieren (Produkte, Kunden etc.).
 			</p>
-			<h2>Was wird an integrierte Anwendungen übergeben / entgegengenommen?</h2>
+
+			<img class="u-max-full-width" src="/assets/images/mockup_dashboard.png" alt="Mockup - Dashboard">
+
+			<br>
+			<br>
+			<b>Mockup - Bestellübersicht</b>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquam turpis at pellentesque.
-				Integer consequat ex tortor, ut ultrices nibh molestie eu. Etiam faucibus id tortor nec rhoncus. Sed
-				sollicitudin, ligula ac rhoncus pulvinar, mauris velit dictum erat, eu vehicula eros tortor a nisl.
-				Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et
-				malesuada fames ac ante ipsum primis in faucibus. Vivamus eget scelerisque ligula, id fringilla quam.
+				Nach einem Klick auf die Kategorie “Bestellungen”, landet unsere System-Administratorin auf der
+				“Bestellübersicht”. Hier werden viele wichtige und relevante Informationen angezeigt. In diesem Bereich
+				fliessen alle Daten zusammen und geben Auskunft über den Prozess der einzelnen Bestellungen.
+
+				Jede Bestellung hat eine Bestell-ID, diese kommt direkt aus unserer Bestelldatenbank. Zudem ist jede
+				Bestellung einem Kunden zugeordnet. Der Name der Kunden kommt aus der Kundendatenbank. Der Lieferant,
+				welcher die Bestellung zurzeit bearbeitet, wird aus unserer Lieferantendatenbank herangezogen. Ebenfalls
+				eine wichtige Information ist der Bezahlstatus. Diese Information kommt von unseren externen
+				Zahlungspartnern und gelangt via Enterprise Service Bus zu uns. Zu Guter letzt, bietet die Spalte
+				“Lieferstatus” eine Übersicht zum Fortschritt der aktuellen Auftragsabwicklung.
+
 			</p>
+
+			<img class="u-max-full-width" src="/assets/images/mockup_bestell_uebersicht.png"
+				alt="Mockup - Bestellübersicht">
+
+
+			<br>
+			<br>
+			<b>Mockup - Bestelldetails</b>
+			<p>
+				Mehr Informationen zu den einzelnen Bestellungen erhält die Benutzerin über die Detailansicht. Diese
+				wird geöffnet sobald auf eine Spalte für eine bestimmte Bestellung geklickt wird. Hier werden sämtliche
+				Detailinformationen zu einer Bestellung angezeigt. Die Informationen wie Produktkategorie, Menge,
+				Grösse, Farbe und Design kommen aus unserer Produktdatenbank. Die Bemerkungen wiederum aus unserer
+				Bestelldatenbank. Die Detailinformationen zum aktuellen Lieferanten werden von der Lieferantendatenbank
+				geliefert. Interessant sind auch die Details zum Lieferstatus, dies ist eine Übersicht historischer
+				“Checkpoints”. Diese Informationen liefern uns die externen Partner, ebenfalls über eine Enterprise
+				Service Bus Schnittstelle. Mit Hilfe dieser Informationen ist es uns auch möglich, einen
+				Fortschrittsbalken bezüglich des Lieferstatus zu generieren. Dieser Fortschrittsbalken ist auf folgenden
+				Teilbereichen aufgebaut:
+
+				<ul>
+					<li>00: Bestellung eingegangen</li>
+					<li>01: Bestellung bezahlt</li>
+					<li>02: Pullover bedruckt</li>
+					<li>03: Pullover beim Lieferanten</li>
+					<li>04: Pullover beim Kunden</li>
+				</ul>
+
+				Der Bereich "aktueller Lieferant" gibt Auskunft wo sich die Lieferung zum jetzigen Zeitpunkt befindet
+				und ermöglicht eine direkte Kontaktaufnahme mit dem jeweiligen Partner.
+
+			</p>
+
+			<img class="u-max-full-width" src="/assets/images/mockup_bestell_detail.png" alt="Mockup - Bestelldetails">
 		</div>
 	</div>
 	<script src="./assets/jquery/js/jquery-3.1.1.slim.min.js"></script>
